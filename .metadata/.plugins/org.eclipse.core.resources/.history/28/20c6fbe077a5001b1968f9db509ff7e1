@@ -1,0 +1,19 @@
+package com.app.model;
+
+import java.util.List;
+
+public class Player {
+	private int id;
+	private String name;
+	private int age;
+	
+	private Address permanentAddress;
+	private List<Team> teamlist;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
+}
