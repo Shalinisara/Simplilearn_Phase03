@@ -16,12 +16,13 @@ import lombok.ToString;
 @Getter
 @ToString
 @NoArgsConstructor
-
 public class Player {
+	
 	
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	private String name;
 	private String teamName;
 	private int age;

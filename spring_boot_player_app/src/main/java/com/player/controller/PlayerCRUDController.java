@@ -1,7 +1,6 @@
 package com.player.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,9 +24,8 @@ public class PlayerCRUDController {
 	public Player createPlayer(@RequestBody Player player) {
 		// TODO Auto-generated method stub
 		System.out.println("In controller");
-		Gson gson = new GsonBuilderUtils().setPrettyPrinting().create(); // pretty print       
-		 String prettyJson = gson.toJson(player); 
-		 System.out.println(prettyJson);
+		System.out.println(player.toString());
+		
 		return playercrudservice.createPlayer(player);
 	}
 
@@ -44,7 +42,7 @@ public class PlayerCRUDController {
 	}
 
 	@DeleteMapping("/player/{id}")
-	public void deletePlayer(int id) {
+	public void deletePlayer(@PathVariable int id) {
 		// TODO Auto-generated method stub
 		playercrudservice.deletePlayer(id);
 	}
